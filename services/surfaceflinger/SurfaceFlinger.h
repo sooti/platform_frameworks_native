@@ -347,6 +347,7 @@ private:
     /* ------------------------------------------------------------------------
      * Extensions
      */
+#ifdef USE_HWC2
     virtual void updateExtendedMode() { }
 
     virtual void getIndexLOI(size_t /*dpy*/,
@@ -368,7 +369,10 @@ private:
     virtual void setDisplayAnimating(const sp<const DisplayDevice>& /*hw*/) { }
 
     virtual void updateVisibleRegionsDirty() { }
+
     virtual void handleMessageRefresh();
+#endif
+
     /* ------------------------------------------------------------------------
      * Message handling
      */
